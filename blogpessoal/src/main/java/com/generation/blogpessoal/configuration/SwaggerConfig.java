@@ -12,47 +12,33 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.responses.ApiResponse;
 import io.swagger.v3.oas.models.responses.ApiResponses;
 
-/**
- * A Anotação (Annotation) @Configuration indica que a classe é uma fonte
- * de configuração e definição de Beans.
- * 
- */
+
 @Configuration
 public class SwaggerConfig {
 
-    /**
-     * A Anotação @Bean indica que o método é um bean, ou seja, um objeto que pode ser
-     * injetado em qualquer ponto da sua aplicação.
-     */
+    
 	@Bean
 	public OpenAPI springBlogPessoalOpenAPI() {
 		
-        /** Cria um Objeto da Classe OpenAPI, que gera a documentação no Swagger utilizando 
-         * a especificação OpenAPI.
-         * 
-         */
+       
         return new OpenAPI()
 				.info(new Info()
 					.title("Projeto Blog Pessoal 2022")
-					.description("Projeto Blog Pessoal - Rafaelq80!")
+					.description("Projeto Blog Pessoal - Eidryel2")
 					.version("v0.0.1")
 				.license(new License()
 					.name("Generation Brasil")
 					.url("https://brazil.generation.org/"))
 				.contact(new Contact()
-					.name("Rafael Antônio Queiróz")
-					.url("https://github.com/rafaelq80")
-					.email("rafaelproinfo@gmail.com")))
+					.name("Adrielly Ribeiro da Silva")
+					.url("https://github.com/Eidryel2")
+					.email("adrielly70@hotmail.com")))
 				.externalDocs(new ExternalDocumentation()
 					.description("Github")
-					.url("https://github.com/rafaelq80"));
+					.url("https://github.com/Eidryel2"));
 	}
 
-    /**
-     * A Classe OpenApiCustomiser permite personalizar o Swagger, baseado na 
-     * Especificação OpenAPI. O Método abaixo, personaliza todas as mensagens 
-     * HTTP Responses (Respostas das requisições) do Swagger.
-     */
+    
 	@Bean
 	public OpenApiCustomiser customerGlobalHeaderOpenApiCustomiser() {
 
@@ -73,9 +59,7 @@ public class SwaggerConfig {
 		};
 	}
 
-    /**
-     * O Método createApiResponse() adiciona uma descrição (Mensagem), em cada Resposta HTTP.
-     */
+   
 	private ApiResponse createApiResponse(String message) {
 
 		return new ApiResponse().description(message);

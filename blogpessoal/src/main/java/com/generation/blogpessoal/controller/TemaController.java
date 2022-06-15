@@ -63,11 +63,11 @@ public class TemaController {
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteTema(@PathVariable Long id) {
+	public ResponseEntity<?> deletePostagem(@PathVariable Long id) {
 		
 		return temaRepository.findById(id)
 				.map(resposta -> {
-				temaRepository.deleteById(id);
+					temaRepository.deleteById(id);
 					return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 				})
 				.orElse(ResponseEntity.notFound().build());

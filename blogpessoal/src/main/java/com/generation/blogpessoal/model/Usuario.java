@@ -21,6 +21,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
+	
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
