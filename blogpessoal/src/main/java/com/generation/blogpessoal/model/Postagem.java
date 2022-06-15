@@ -12,24 +12,24 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.UpdateTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
-@Table(name = "tb_postagens")
+@Table(name = "tb_postagens") 
 public class Postagem {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	private Long id; 
 
-	@NotBlank(message = "O atributo Título é obrigatório e não pode utilizar espaços em branco!")
-	@Size(min = 5, max = 100, message = "O atributo Título precisa ter no mínimo 5 e máximo 100 caracteres.")
-	private String titulo;
+	@NotBlank(message = "O atributo título é Obrigatório e não pode utilizar espaços em branco!") 
+	@Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 05 e no máximo 100 caracteres")
+	private String titulo; 
 
-	@NotNull(message = "O atributo Texto é obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo Texto precisa ter no mínimo 10 e máximo 1000 caracteres.")
+	@NotNull(message = "O atributo texto é Obrigatório!")
+	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 500 caracteres")
 	private String texto;
 
 	@UpdateTimestamp
@@ -76,7 +76,7 @@ public class Postagem {
 	}
 
 	public Tema getTema() {
-		return tema;
+		return this.tema;
 	}
 
 	public void setTema(Tema tema) {
@@ -84,7 +84,7 @@ public class Postagem {
 	}
 
 	public Usuario getUsuario() {
-		return usuario;
+		return this.usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
